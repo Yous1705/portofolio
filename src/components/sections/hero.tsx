@@ -2,7 +2,7 @@ import { Button } from "../ui/button";
 
 export function HeroSection() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="scroll-mt-24 py-14 md:py-20">
       <div className="max-w-3xl">
         <p className="text-sm text-white/60">Medan, Indonesia</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">

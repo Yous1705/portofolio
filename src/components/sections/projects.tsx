@@ -22,7 +22,7 @@ export function ProjectsSection() {
   }, [active]);
 
   return (
-    <section id="projects" className="py-14 md:py-20">
+    <section id="projects" className="scroll-mt-24 py-14 md:py-20">
       <SectionHeader
         title="Projects"
         description="Selected work that highlights my engineering decision, backend focus, and end-to-end delivery."
