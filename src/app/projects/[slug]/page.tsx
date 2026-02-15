@@ -10,12 +10,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
 
+export const dynamic = "force-static";
+
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-function ProjectDetailPage({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
+async function ProjectDetailPage({ params }: { params: { slug: string } }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) notFound();
 
   return (
