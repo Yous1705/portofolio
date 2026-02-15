@@ -5,7 +5,7 @@ import { skillGroups } from "@/data/skills";
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-14 md:py-20">
+    <section id="skills" className="scroll-mt-24 py-14 md:py-20">
       <SectionHeader
         title="Skills"
         description="Core technologies I use to build maintainable, production-ready applications."

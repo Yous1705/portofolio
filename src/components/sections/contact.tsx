@@ -27,7 +27,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-14 md:py-20">
+    <section id="contact" className="scroll-mt-24 py-14 md:py-20">
       <SectionHeader
         title="Contact"
         description="Want to discuss an opportunity or a project? The fastest way is email."

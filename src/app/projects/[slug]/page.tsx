@@ -3,20 +3,20 @@ import { SectionHeader } from "@/components/section-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { projects } from "@/data/projects";
 import { getProjectBySlug } from "@/lib/projects";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
 
-async function ProjectDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const project = getProjectBySlug(slug);
-  if (!project) return notFound();
+export function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
+}
+
+function ProjectDetailPage({ params }: { params: { slug: string } }) {
+  const project = getProjectBySlug(params.slug);
+  if (!project) notFound();
 
   return (
     <Container className="py-10 md:py-14">

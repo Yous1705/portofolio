@@ -6,7 +6,7 @@ import { experiences } from "@/data/experience";
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-14 md:py-20">
+    <section id="experience" className="scroll-mt-24 py-14 md:py-20">
       <SectionHeader
         title="Experience"
         description="Where I’ve built real-world habits: shipping features, communicating clearly, and keeping code maintainable."
