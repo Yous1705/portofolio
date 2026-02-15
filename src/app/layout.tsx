@@ -3,7 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Toaster } from "@/components/ui/sonner";
 
-const siteUrl = "https://your-domain.com";
+const siteUrl = "https://yous1705.github.io/portofolio/";
 const name = "Yous Sibarani";
 const title = `${name} — Software Engineer`;
 const description =
