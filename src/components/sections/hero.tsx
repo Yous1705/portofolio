@@ -31,7 +31,9 @@ export function HeroSection() {
             variant="outline"
             className="border-white/15 bg-transparent text-white/80 hover:bg-white/50"
           >
-            <a href="#">Download CV</a>
+            <a href="/cv/cv-yous.pdf" target="_blank" rel="noreferrer">
+              View CV
+            </a>
           </Button>
         </div>
 
