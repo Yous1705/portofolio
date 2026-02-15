@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 
-const siteUrl = "https://yous1705.github.io/portofolio/"; // ganti nanti
+export const dynamic = "force-static";
+
+const siteUrl = "https://yous1705.github.io/portofolio"; // tanpa trailing "/"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -18,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projectRoutes: MetadataRoute.Sitemap = projects.map((p) => ({
     url: `${siteUrl}/projects/${p.slug}`,
     lastModified: now,
-    changeFrequency: "monthly" as const,
+    changeFrequency: "monthly",
     priority: 0.7,
   }));
 
