@@ -1,18 +1,43 @@
+"use client";
+
+import * as React from "react";
 import { Container } from "@/components/container";
-import { ContactSection } from "@/components/sections/contact";
-import { ExperienceSection } from "@/components/sections/experience";
 import { HeroSection } from "@/components/sections/hero";
+import { AboutSection } from "@/components/sections/about";
 import { ProjectsSection } from "@/components/sections/projects";
 import { SkillsSection } from "@/components/sections/skills";
-import Image from "next/image";
+import { ExperienceSection } from "@/components/sections/experience";
+import { ContactSection } from "@/components/sections/contact";
 
-export default function Home() {
+export default function HomePage() {
+  const [panel, setPanel] = React.useState<"hero" | "about">("hero");
+
   return (
     <Container>
-      <HeroSection />
+      {/* viewport */}
+      <div className="overflow-hidden">
+        <div
+          className={[
+            "flex w-[200%] transition-transform duration-500 ease-out",
+            panel === "about" ? "-translate-x-1/2" : "translate-x-0",
+          ].join(" ")}
+        >
+          {/* HERO */}
+          <div className="w-1/2">
+            <HeroSection onAbout={() => setPanel("about")} />
+          </div>
+
+          {/* ABOUT */}
+          <div className="w-1/2">
+            <AboutSection onBack={() => setPanel("hero")} />
+          </div>
+        </div>
+      </div>
+
+      {/* sections lain tetap normal */}
+      <ProjectsSection />
       <SkillsSection />
       <ExperienceSection />
-      <ProjectsSection />
       <ContactSection />
     </Container>
   );
