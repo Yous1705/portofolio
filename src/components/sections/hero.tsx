@@ -40,7 +40,7 @@ export function HeroSection({ onAbout }: { onAbout?: () => void }) {
             variant="outline"
             className="border-white/15 bg-transparent text-white/80 hover:bg-white/5"
           >
-            <a href="/cv.pdf" download="YourName-CV.pdf">
+            <a href="cv/cv-yous.pdf" download="Yous-Sibarani-CV.pdf">
               Download CV
             </a>
           </Button>
