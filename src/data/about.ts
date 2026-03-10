@@ -28,9 +28,9 @@ export const educationTimeline: TimelineItem[] = [
     type: "education",
   },
   {
-    title: "SMA (ringkas)",
+    title: "SMA",
     period: "2018 — 2021",
-    description: "Ringkas saja. Tidak perlu detail panjang.",
+    description: "Perjallanan SMA",
     imageSrc: "/images/yous2.jpeg",
     imageAlt: "School",
     type: "education",
