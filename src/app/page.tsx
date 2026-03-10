@@ -14,7 +14,6 @@ export default function HomePage() {
 
   return (
     <Container>
-      {/* viewport */}
       <div className="overflow-hidden">
         <div
           className={[
@@ -22,19 +21,14 @@ export default function HomePage() {
             panel === "about" ? "-translate-x-1/2" : "translate-x-0",
           ].join(" ")}
         >
-          {/* HERO */}
           <div className="w-1/2">
             <HeroSection onAbout={() => setPanel("about")} />
           </div>
-
-          {/* ABOUT */}
           <div className="w-1/2">
             <AboutSection onBack={() => setPanel("hero")} />
           </div>
         </div>
       </div>
-
-      {/* sections lain tetap normal */}
       <ProjectsSection />
       <SkillsSection />
       <ExperienceSection />
