@@ -37,7 +37,6 @@ export function AboutSection({ onBack }: { onBack?: () => void }) {
         description="A quick summary of my background, interests, and how I approach building software."
       />
 
-      {/* Snapshot */}
       <Card className="border-white/10 bg-white/[0.03]">
         <CardContent className="p-6">
           <p className="text-sm leading-relaxed text-white/70">
@@ -49,7 +48,6 @@ export function AboutSection({ onBack }: { onBack?: () => void }) {
       </Card>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2">
-        {/* Education timeline */}
         <div className="md:col-span-1">
           <h3 className="mb-3 text-base font-semibold text-white/90">
             Education
@@ -57,7 +55,6 @@ export function AboutSection({ onBack }: { onBack?: () => void }) {
           <VerticalTimeline items={educationTimeline} />
         </div>
 
-        {/* Right column: interests + hobbies + now learning */}
         <div className="space-y-4 md:col-span-1">
           <Card className="border-white/10 bg-white/[0.03]">
             <CardContent className="p-6">
