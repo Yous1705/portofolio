@@ -13,7 +13,6 @@ export function VerticalTimeline({
   items: TimelineItem[];
   className?: string;
 }) {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const [open, setOpen] = React.useState(false);
   const [active, setActive] = React.useState<{
     src: string;
@@ -45,7 +44,7 @@ export function VerticalTimeline({
                 aria-label={`Open image for ${item.title}`}
               >
                 <Image
-                  src={`${basePath}${item.imageSrc}`}
+                  src={item.imageSrc}
                   alt={item.imageAlt}
                   width={48}
                   height={48}
