@@ -28,14 +28,14 @@ export function HeroSection({ onAbout }: { onAbout?: () => void }) {
             type="button"
             variant="outline"
             onClick={onAbout}
-            className="border-white/15 bg-transparent text-white/80 hover:bg-white/5"
+            className="border-white/15 bg-transparent text-white/80 hover:bg-blue-50"
           >
             About me
           </Button>
           <Button
             asChild
             variant="outline"
-            className="border-white/15 bg-transparent text-white/80 hover:bg-white/5"
+            className="border-white/15 bg-transparent text-white/80 hover:bg-blue-50"
           >
             <a href="cv/cv-yous.pdf" download="Yous-Sibarani-CV.pdf">
               Download CV

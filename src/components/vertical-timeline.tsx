@@ -36,7 +36,6 @@ export function VerticalTimeline({
             key={`${item.title}-${item.period}`}
             className="relative pl-14 md:pl-16"
           >
-            {/* node image (clickable) */}
             <div className="absolute left-0 top-1">
               <button
                 type="button"
