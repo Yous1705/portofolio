@@ -1,13 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { TechMarqueeLogos } from "@/components/tech-marquee-logos";
+import { RunningText } from "../tech-marquee-running-text";
 
 export function HeroSection({ onAbout }: { onAbout?: () => void }) {
   return (
     <section className="py-16 md:py-24">
       <div className="max-w-3xl">
-        <p className="text-sm text-white/60">Jakarta, Indonesia</p>
+        <p className="text-sm text-white/60">Medan, Indonesia</p>
 
         <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">
           Junior Full Stack / Backend-oriented Software Engineer
@@ -24,7 +24,6 @@ export function HeroSection({ onAbout }: { onAbout?: () => void }) {
             <a href="#projects">View Projects</a>
           </Button>
 
-          {/* tombol About (slide) */}
           <Button
             type="button"
             variant="outline"
@@ -33,8 +32,6 @@ export function HeroSection({ onAbout }: { onAbout?: () => void }) {
           >
             About me
           </Button>
-
-          {/* CV (file di public/cv.pdf) */}
           <Button
             asChild
             variant="outline"
@@ -60,19 +57,11 @@ export function HeroSection({ onAbout }: { onAbout?: () => void }) {
         </div>
       </div>
       <div className="mt-10">
-        <p className="mb-3 text-xs text-white/55">Core stack</p>
-
-        {/* SPACING BESAR */}
-        <div className="h-16 md:h-24" />
-
-        {/* MARQUEE AREA (CENTERED) */}
+        <div className="h-20 md:h-20" />
         <div className="flex justify-center">
-          <div className="w-full max-w-5xl">
-            <p className="mb-4 text-center text-xs text-white/55">Core stack</p>
-
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-              <TechMarqueeLogos />
-              <TechMarqueeLogos className="mt-6" />
+          <div className="w-full  max-w-10xl">
+            <div className="rounded-2xl border border-blue-500 bg-white/[0.03] p-6">
+              <RunningText />
             </div>
           </div>
         </div>
