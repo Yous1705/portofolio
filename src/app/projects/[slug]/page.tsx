@@ -3,6 +3,12 @@ import { SectionHeader } from "@/components/section-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { projects } from "@/data/projects";
 import { getProjectBySlug } from "@/lib/projects";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
@@ -58,13 +64,13 @@ async function ProjectDetailPage({ params }: { params: { slug: string } }) {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            {project.links?.repo ? (
+            {project.links?.repoFe ? (
               <Button
                 asChild
                 variant="outline"
                 className="border-white/15 bg-transparent hover:bg-white/5"
               >
-                <a href={project.links.repo} target="_blank" rel="noreferrer">
+                <a href={project.links.repoFe} target="_blank" rel="noreferrer">
                   <Github className="mr-2 h-4 w-4" />
                   Repository
                 </a>
@@ -109,7 +115,7 @@ async function ProjectDetailPage({ params }: { params: { slug: string } }) {
       <div className="mt-12 grid gap-4 md:grid-cols-2">
         <Card className="border-white/10 bg-white/[0.03]">
           <CardContent className="p-6">
-            <SectionHeader title="Highlights" className="mb-4" />
+            <SectionHeader title="Highlights" className="mb-4 text-white/100" />
             <ul className="list-disc space-y-2 pl-5 text-sm text-white/70">
               {project.highlights.map((h) => (
                 <li key={h}>{h}</li>
@@ -120,7 +126,10 @@ async function ProjectDetailPage({ params }: { params: { slug: string } }) {
 
         <Card className="border-white/10 bg-white/[0.03]">
           <CardContent className="p-6">
-            <SectionHeader title="Problems -> Solutions" className="mb-4" />
+            <SectionHeader
+              title="Problems -> Solutions"
+              className="mb-4 text-white/100"
+            />
             <div className="space-y-4 text-sm">
               <div>
                 <p className="font-medium text-white/85">Problems</p>
@@ -142,9 +151,68 @@ async function ProjectDetailPage({ params }: { params: { slug: string } }) {
           </CardContent>
         </Card>
 
+        {project.imageSrc?.length ? (
+          <Card className="border-white/10 bg-white/[0.03] md:col-span-2">
+            <CardContent className="p-6">
+              <SectionHeader title="Images" className="mb-4 text-white/100" />
+              <p className="text-blue-100"> Slde to see another image</p>
+
+              <Carousel className="w-full max-w-5xl mx-auto">
+                <CarouselContent>
+                  {project.imageSrc.map((src, index) => (
+                    <CarouselItem key={index} className="flex justify-center">
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="relative w-full max-w-3xl aspect-video overflow-hidden rounded-xl cursor-pointer">
+                            <img
+                              src={src}
+                              alt={`${project.name} image ${index + 1}`}
+                              className="absolute inset-0 h-full w-full object-fit transition hover:scale-105"
+                            />
+                          </div>
+                        </DialogTrigger>
+
+                        <DialogContent className="!max-w-[70vw] w-[70vw] max-h-[75vh] p-4 bg-black border-white/10">
+                          <div className="flex items-center justify-center w-full h-full">
+                            <img
+                              src={src}
+                              alt={`${project.name} image ${index + 1}`}
+                              className="max-w-full max-h-[70vh] object-contain rounded-lg"
+                            />
+                          </div>
+                        </DialogContent>
+                      </Dialog>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+            </CardContent>
+          </Card>
+        ) : null}
+
+        {project.videoSrc ? (
+          <Card className="border-white/10 bg-white/[0.03] md:col-span-2">
+            <CardContent className="p-6">
+              <SectionHeader
+                title="Live Demo"
+                className="mb-4 text-white/100"
+              />
+              <video
+                className="w-full aspect-video rounded-lg"
+                controls
+                autoPlay
+                muted
+                loop
+              >
+                <source src={project.videoSrc} type="video/mp4" />
+              </video>
+            </CardContent>
+          </Card>
+        ) : null}
+
         <Card className="border-white/10 bg-white/[0.03] md:col-span-2">
           <CardContent className="p-6">
-            <SectionHeader title="Impact" className="mb-4" />
+            <SectionHeader title="Impact" className="mb-4 text-white/100" />
             <ul className="list-disc space-y-2 px-5 text-sm text-white/70">
               {(project.impact ?? []).map((i) => (
                 <li key={i}>{i}</li>

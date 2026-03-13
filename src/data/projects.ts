@@ -16,8 +16,15 @@ export type Project = {
   solutions?: string[];
   impact?: string[];
 
+  videoSrc?: string;
+  videoAlt?: string;
+
+  imageSrc?: string[];
+  imageAlt?: string;
+
   links?: {
-    repo?: string;
+    repoBe?: string;
+    repoFe?: string;
     live?: string;
   };
 };
@@ -36,7 +43,7 @@ export const projects: Project[] = [
       "Report export (CSV/XLSX)",
       "Modular services + validation",
     ],
-    role: "Full-stack developer (backend-focused)",
+    role: "Full-stack developer",
     timeframe: "Project-based development",
     problems: [
       "Complex LMS workflows across multiple roles require clear authorization boundaries.",
@@ -51,7 +58,20 @@ export const projects: Project[] = [
       "Improved maintainability with modular services and clear separation of concerns.",
       "Enabled teachers/admin to export reports without manual data work.",
     ],
-    links: { repo: "#", live: "#" },
+    imageSrc: [
+      "/images/ERD.svg",
+      "/images/flow1.png",
+      "/images/flow2.png",
+      "/images/flow3.png",
+      "/images/component.png",
+    ],
+    imageAlt: "LMS dashboard",
+    videoSrc: "/video/vid1.mp4",
+    videoAlt: "video LMS",
+    links: {
+      repoFe: "https://github.com/Yous1705/sipadi-fe.git",
+      repoBe: "https://github.com/Yous1705/sipadi-backend.git",
+    },
   },
   {
     slug: "Mini-Play",
@@ -75,6 +95,6 @@ export const projects: Project[] = [
     impact: [
       "Clear access control and stable media handling for user content.",
     ],
-    links: { repo: "#" },
+    links: { repoBe: "https://github.com/Yous1705/miniplay-api.git" },
   },
 ];

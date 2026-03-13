@@ -28,8 +28,14 @@ export const skillGroups: SkillGroup[] = [
     items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
   },
   {
-    title: "Testing & Tools",
-    description: "Development workflow and collaboration",
-    items: ["Git", "Docker basics", "Swagger/OpenAPI", "Postman"],
+    title: "Soft Skills",
+    description:
+      "Personal skills that support effective software development and teamwork.",
+    items: [
+      "Problem Solving",
+      "Analytical Thinking",
+      "Adaptability",
+      "Time Management",
+    ],
   },
 ];

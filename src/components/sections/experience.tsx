@@ -6,7 +6,7 @@ import { experiences } from "@/data/experience";
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="scroll-mt-24 py-14 md:py-20">
+    <section id="experience" className="scroll-mt-24 py-10 md:py-10">
       <SectionHeader
         title="Experience"
         description="Where I’ve built real-world habits: shipping features, communicating clearly, and keeping code maintainable."
@@ -29,7 +29,10 @@ export function ExperienceSection() {
                       {e.company}
                     </span>
                     {e.location ? (
-                      <span className="text-white/55"> • {e.location}</span>
+                      <span className="text-white/55">
+                        {" "}
+                        • {e.location} • {e.startDate} - {e.endDate}
+                      </span>
                     ) : null}
                   </p>
                 </div>

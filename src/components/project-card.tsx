@@ -12,16 +12,27 @@ export function ProjectCard({ project }: { project: Project }) {
           <div>
             <Link
               href={`/projects/${project.slug}`}
-              className="text-base font-semibold tracking-tight hover:underline"
+              className="text-base font-bold tracking-tight hover:underline text-white/90"
             >
               {project.name}
             </Link>
             <p className="mt-1 text-sm text-white/65">{project.tagline}</p>
           </div>
           <div className="flex items-center gap-2">
-            {project.links?.repo ? (
+            {project.links?.repoFe ? (
               <a
-                href={project.links.repo}
+                href={project.links.repoFe}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-md border border-white/10 p-2 text-white/70 hover:text-white hover:border-white/20 transition-colors"
+                aria-label="Repository"
+              >
+                <Github className="h-4 w-4" />
+              </a>
+            ) : null}
+            {project.links?.repoBe ? (
+              <a
+                href={project.links.repoBe}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-md border border-white/10 p-2 text-white/70 hover:text-white hover:border-white/20 transition-colors"
@@ -72,7 +83,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="pt-2">
         <Link
           href={`/projects/${project.slug}`}
-          className="text-sm font-medium text-[#90caf9] hover:text-[#64b5f6] transition-colors"
+          className="text-sm font-medium text-[#90caf9] hover:text-[#64b5f6] transition-colors py-2 px-3 rounded-md inline-flex items-center gap-1"
         >
           View case study →
         </Link>

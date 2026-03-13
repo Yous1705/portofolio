@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { Container } from "@/components/container";
-import { HeroSection } from "@/components/sections/hero";
 import { AboutSection } from "@/components/sections/about";
 import { ProjectsSection } from "@/components/sections/projects";
 import { SkillsSection } from "@/components/sections/skills";
@@ -14,21 +13,7 @@ export default function HomePage() {
 
   return (
     <Container>
-      <div className="overflow-hidden">
-        <div
-          className={[
-            "flex w-[200%] transition-transform duration-500 ease-out",
-            panel === "about" ? "-translate-x-1/2" : "translate-x-0",
-          ].join(" ")}
-        >
-          <div className="w-1/2">
-            <HeroSection onAbout={() => setPanel("about")} />
-          </div>
-          <div className="w-1/2">
-            <AboutSection onBack={() => setPanel("hero")} />
-          </div>
-        </div>
-      </div>
+      <AboutSection />
       <ProjectsSection />
       <SkillsSection />
       <ExperienceSection />

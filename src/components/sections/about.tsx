@@ -17,32 +17,40 @@ const interests = [
 const hobbies = [
   "Building side projects",
   "Exploring new tech",
-  "Multimedia / design exploration",
+  "Read some comics/manga",
   "Gaming (casual)",
 ];
 
 export function AboutSection({ onBack }: { onBack?: () => void }) {
   return (
     <section id="about" className="scroll-mt-24 py-14 md:py-20">
-      <Button
-        type="button"
-        variant="outline"
-        onClick={onBack}
-        className="border-white/15 bg-transparent text-white/80 hover:bg-white/5"
-      >
-        Back
-      </Button>
+      <div className="max-w-3xl">
+        <p className="text-sm text-white/60">Medan, Indonesia</p>
+
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">
+          Junior Full Stack / Backend-oriented Software Engineer
+        </h1>
+      </div>
+
       <SectionHeader
+        className="mt-6"
         title="About"
         description="A quick summary of my background, interests, and how I approach building software."
       />
 
       <Card className="border-white/10 bg-white/[0.03]">
         <CardContent className="p-6">
-          <p className="text-sm leading-relaxed text-white/70">
-            I’m a junior full-stack engineer with a backend focus. I enjoy
-            building reliable APIs, modeling data carefully, and keeping code
-            maintainable with clear structure and validation.
+          <p className="text-lg leading-relaxed text-white/70">
+            I’m a Junior Full-Stack Software Engineer with hands-on experience
+            building secure and scalable web applications using TypeScript,
+            React/Next.js, and NestJS. Experienced in designing RESTful APIs,
+            implementing JWT-based authentication and role-based access control,
+            and managing relational databases with PostgreSQL and Prisma ORM to
+            ensure structured and reliable data handling. Passionate about
+            developing maintainable systems across both frontend and backend,
+            and eager to contribute impactful solutions within a collaborative
+            engineering environment while continuously strengthening my
+            technical expertise.
           </p>
         </CardContent>
       </Card>

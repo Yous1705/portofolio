@@ -2,6 +2,8 @@ export type Experience = {
   company: string;
   role: string;
   location?: string;
+  startDate?: string;
+  endDate?: string;
   timeframe: string;
   summary?: string;
   bullets: string[];
@@ -13,6 +15,8 @@ export const experiences: Experience[] = [
     company: "Kominfo",
     role: "Intern (Software Engineer)",
     location: "Medan",
+    startDate: "January 2025",
+    endDate: "February 2025",
     timeframe: "Internship",
     summary:
       "Worked on application development and learned delivery practices in a government environment.",
